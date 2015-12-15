@@ -20,19 +20,19 @@ class Stack<T> {
 	Node<T> top;
 
 	public T pop() {
-		T temp = top.getData();
-		top = top.getNext();
+		T temp = top.getData();		// 임의의 변수에 top이 가르키고 있는 데이터를 저장.
+		top = top.getNext();		// top을 밑으로 내려
 
 		return temp;
 	}
 
 	public void push(T d) {
-		if (top == null) {
-			top = new Node<T>(d);
+		if (top == null) {		// top이 아무것도 가르키고 있지 않을 때
+			top = new Node<T>(d);		// 새로운 node를 만들고 top이 새로운 node를 가르키도록 한다.
 		} else {
-			Node<T> newNode = new Node<T>(d);
-			newNode.setNext(top);
-			top = newNode;
+			Node<T> newNode = new Node<T>(d);		// 새로운 node를 만들어 데이터 저장.
+			newNode.setNext(top);		// 새로운 node와 이전의 node를 연결
+			top = newNode;		// top이 새로운 node를 가르키도록 한다.
 		}
 	}
 }
